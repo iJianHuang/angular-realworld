@@ -25,3 +25,33 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## ReqBin sign up /api/users
+## Sign in /api/users/login
+POST /api/users/ HTTP/1.1
+Host: conduit.productionready.io
+Content-Type: application/json
+Content-Length: 113
+
+{
+  "user": 
+  {
+    "email": "?",
+    "password": "?",
+    "username": "?"
+  }
+}
+
+Response Ok 200
+{
+    "user": {
+        "id": ?,
+        "email": "?",
+        "createdAt": "2020-12-24T21:47:01.927Z",
+        "updatedAt": "2020-12-24T21:47:01.943Z",
+        "username": "?",
+        "bio": null,
+        "image": null,
+        "token": "?"
+    }
+}
