@@ -7,11 +7,15 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http'
 import { RouterModule } from '@angular/router';
 import { ListErrorsComponent } from './list-errors/list-errors.component';
 
+import {MatIconModule} from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    MatToolbarModule,
     //HttpModule,
     RouterModule
   ],

@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-// import { HomeComponent } from './home/home.component';
 
-// const routes: Routes = [{
-//   path: '',
-//   component: HomeComponent
-// }];
+const routes: Routes = [
+  { path: 'contactmanager', loadChildren: () => import('./contactmanager/contactmanager.module').then(m => m.ContactmanagerModule) },
+  { path: 'demo', loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule) },
+  { path: '**', redirectTo: 'demo' }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot([])],
+  imports: [
+
+    RouterModule.forRoot(routes)
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

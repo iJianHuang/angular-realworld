@@ -1,4 +1,6 @@
-# AngularRealworld
+# Angular Real World
+
+It is an angular play ground.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
 
@@ -55,3 +57,9 @@ Response Ok 200
         "token": "?"
     }
 }
+
+References:
+
+https://stackblitz.com/angular/anovqaeopyy?file=src%2Fstyles.css
+
+https://stackblitz.com/angular/qypdxgpopxp?file=src%2Findex.html
