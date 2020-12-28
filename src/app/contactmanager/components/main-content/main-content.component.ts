@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Contactuser } from 'src/app/core/models/Contactuser';
+import { ContactuserService } from 'src/app/core/services/contactuser.service';
 
 @Component({
   selector: 'app-main-content',
@@ -6,10 +9,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-content.component.scss']
 })
 export class MainContentComponent implements OnInit {
+  user: Contactuser;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private userService: ContactuserService
+    ) { console.log('building main content .... '); }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      const id = params['id'];
+      this.userService.users.subscribe(users => {
+        if (users.length == 0) return;
+
+        this.user = this.userService.userById(id);
+      });      
+    });
   }
 
 }
