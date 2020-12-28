@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MaterialModule } from '../shared/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -13,7 +13,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component'
 import { MainContentComponent } from './components/main-content/main-content.component'
 import { SidenavComponent } from './components/sidenav/sidenav.component'
 
-import { ContactuserService } from '../core/services/contactuser.service'
+import { ContactuserService } from '../core/services/contactuser.service';
+import { ContactnotesComponent } from './components/contactnotes/contactnotes.component'
 
 const routes: Routes = [
   { 
@@ -32,7 +33,8 @@ const routes: Routes = [
     ContactmanagerAppComponent,
     ToolbarComponent,
     MainContentComponent,
-    SidenavComponent
+    SidenavComponent,
+    ContactnotesComponent
   ],
   imports: [
     CommonModule,
