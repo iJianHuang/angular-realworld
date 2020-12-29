@@ -1,20 +1,51 @@
-<div class="main-content-container"> 
-  <mat-toolbar color="basic" class="app-home-slide">
-    <p>
-      Jian's Code Camp
-    </p>
-  </mat-toolbar>
-  <mat-nav-list>
-    <mat-list-item>       
-      <a matLine [routerLink]="['/contactmanager']">
-        <mat-icon>face</mat-icon> Contacts Manager Application 
-      </a>
-    </mat-list-item>
-    <mat-list-item>       
-      <a matLine [routerLink]="['/conduit']">
-        <mat-icon>thumb_up</mat-icon> Conduit Application 
-      </a>
-    </mat-list-item>
-  </mat-nav-list> 
-</div>
+<div class="main-content-container">
 
+  <mat-toolbar color="primary" class="app-home-slide mat-elevation-z10">
+    <h1 class="app-home-slide-title">
+      Jian's Code Camp
+    </h1>
+  </mat-toolbar>
+  <div class="app-home-cards" fxLayoutAlign="space-around center">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Contacts</mat-card-title>
+        <mat-card-subtitle>...</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-nav-list>
+          <mat-list-item>
+            <a matLine [routerLink]="['/contactmanager']">
+              <mat-icon>face</mat-icon> Contacts Manager Application
+            </a>
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Conduit</mat-card-title>
+        <mat-card-subtitle>...</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-nav-list>
+          <mat-list-item>
+            <a matLine [routerLink]="['/conduit']">
+              <mat-icon>thumb_up</mat-icon> Conduit Application
+            </a>
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+ 
+</div>
