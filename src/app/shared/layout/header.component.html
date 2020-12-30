@@ -10,6 +10,13 @@
     <a mat-button routerLink="register">Sign up</a> -->
   </div>
 
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="toggleTheme.emit()">Toggle Theme</button>
+  </mat-menu>
+
   <!-- <button mat-button>
     <mat-icon>menu</mat-icon>
   </button>
