@@ -5,6 +5,13 @@
 .example-button-row button,
 .example-button-row a {
   margin-right: 8px;
+
+  @media (max-width: 500px) {
+    margin-right: 1px;
+    margin-left: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+  }
 }
 
 .site-name {

@@ -7,14 +7,15 @@
     <a mat-button routerLink="conduit">Conduit</a>
     <!-- <a mat-button routerLink="login">Sign in</a>
     <a mat-button routerLink="register">Sign up</a> -->
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="toggleTheme.emit()">Toggle Theme</button>
+    </mat-menu>
   </div>
 
-  <button mat-button [matMenuTriggerFor]="menu">
-    <mat-icon>more_vert</mat-icon>
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="toggleTheme.emit()">Toggle Theme</button>
-  </mat-menu>
+  
 
   <!-- <button mat-button>
     <mat-icon>menu</mat-icon>
