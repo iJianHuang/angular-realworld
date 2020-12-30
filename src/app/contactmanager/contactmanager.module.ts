@@ -14,7 +14,8 @@ import { MainContentComponent } from './components/main-content/main-content.com
 import { SidenavComponent } from './components/sidenav/sidenav.component'
 
 import { ContactuserService } from '../core/services/contactuser.service';
-import { ContactnotesComponent } from './components/contactnotes/contactnotes.component'
+import { ContactnotesComponent } from './components/contactnotes/contactnotes.component';
+import { NewContactDialogComponent } from './components/new-contact-dialog/new-contact-dialog.component'
 
 const routes: Routes = [
   { 
@@ -34,7 +35,8 @@ const routes: Routes = [
     ToolbarComponent,
     MainContentComponent,
     SidenavComponent,
-    ContactnotesComponent
+    ContactnotesComponent,
+    NewContactDialogComponent
   ],
   imports: [
     CommonModule,
