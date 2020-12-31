@@ -1,14 +1,14 @@
+// app
 import { NgModule } from '@angular/core';
-//import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+// shared
+import { SharedModule } from '../shared/shared.module'; 
 import { MaterialModule } from '../shared/material.module'
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule } from '@angular/forms'
 
+// feature
 import { HomeComponent } from './home.component';
-import { SharedModule } from '../shared/shared.module'; 
-
 
 const routes: Routes = [{
   path: 'home',
@@ -20,7 +20,6 @@ const routes: Routes = [{
     RouterModule.forChild(routes),
     MaterialModule,
     FlexLayoutModule,
-    FormsModule,
     SharedModule
   ],
   declarations: [

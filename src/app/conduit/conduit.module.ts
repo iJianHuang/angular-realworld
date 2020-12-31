@@ -1,13 +1,14 @@
+// app
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
+// shared
 import { MaterialModule } from '../shared/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule } from '@angular/forms'
+import { SharedModule } from '../shared/shared.module'
 
-
+// feature
 import { ConduitAppComponent } from './conduit-app.component';
 
 const routes: Routes = [
@@ -18,11 +19,11 @@ const routes: Routes = [
 @NgModule({
   declarations: [ConduitAppComponent],
   imports: [
-    CommonModule,
+    //CommonModule,
     HttpClientModule,
     MaterialModule,
     FlexLayoutModule,
-    FormsModule,
+    SharedModule,
     RouterModule.forChild(routes)
   ]
 })

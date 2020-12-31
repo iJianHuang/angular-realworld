@@ -1,22 +1,20 @@
+// app 
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 
+// shared
+import { SharedModule } from './shared/shared.module'
 import { MaterialModule } from './shared/material.module'
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule } from '@angular/forms'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
-import { AppRoutingModule } from './app-routing.module';
+// feature
 import { AppComponent } from './app.component';
 import { FooterComponent } from './shared/layout/footer.component';
 import { HeaderComponent } from './shared/layout/header.component';
-//import { HomeComponent } from './home/home.component';
 import { HomeModule } from './home/home.module';
-import { AuthModule } from './auth/auth.module';
-import { SharedModule } from './shared/shared.module'
-
-
 
 
 @NgModule({
@@ -26,18 +24,14 @@ import { SharedModule } from './shared/shared.module'
     HeaderComponent
   ],
   imports: [
-    // ApiService,
-    // UserService,
     BrowserModule,
     HttpClientModule,
-    AuthModule,
     MaterialModule,
-    FlexLayoutModule,
-    FormsModule,
+    FlexLayoutModule,    
+    BrowserAnimationsModule,
     HomeModule,
     SharedModule,
     AppRoutingModule,
-    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

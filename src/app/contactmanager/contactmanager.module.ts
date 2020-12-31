@@ -1,19 +1,20 @@
+// app
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
+// shared
 import { MaterialModule } from '../shared/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { SharedModule } from '../shared/shared.module'
+import { ReactiveFormsModule } from '@angular/forms'
 
-
+// feature
 import { ContactmanagerAppComponent } from './contactmanager-app.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component'
 import { MainContentComponent } from './components/main-content/main-content.component'
 import { SidenavComponent } from './components/sidenav/sidenav.component'
 
-//import { ContactuserService } from '../core/services/contactuser.service';
 import { ContactnotesComponent } from './components/contactnotes/contactnotes.component';
 import { NewContactDialogComponent } from './components/new-contact-dialog/new-contact-dialog.component'
 
@@ -39,11 +40,10 @@ const routes: Routes = [
     NewContactDialogComponent
   ],
   imports: [
-    CommonModule,
+    SharedModule,
     HttpClientModule,
     MaterialModule,
     FlexLayoutModule,
-    FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
