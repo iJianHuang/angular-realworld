@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from '../../../../environments/environment';
 
 import { Contactuser } from '../models/contactuser';
-import { BehaviorSubject, Observable } from 'rxjs';
 
-
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ContactuserService {
   private _users: BehaviorSubject<Contactuser[]>;
   private dataStore: {
@@ -40,7 +38,7 @@ export class ContactuserService {
   }
 
   loadAll() {
-    const usersUrl = 'https://angular-material-api.azurewebsites.net/users'
+    const usersUrl = `${environment.api_url_contactsmanager}`; 
     this.http.get<Contactuser[]>(usersUrl)
     .subscribe(data => {
       this.dataStore.users = data;

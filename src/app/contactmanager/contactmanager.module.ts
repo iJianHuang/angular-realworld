@@ -18,6 +18,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component'
 import { ContactnotesComponent } from './components/contactnotes/contactnotes.component';
 import { NewContactDialogComponent } from './components/new-contact-dialog/new-contact-dialog.component'
 
+import { ContactuserService } from './core/services/contactuser.service';
+
 const routes: Routes = [
   { 
     path: '', 
@@ -48,7 +50,7 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   providers: [
-    //ContactuserService
+    ContactuserService
   ]
 })
 export class ContactmanagerModule { }
