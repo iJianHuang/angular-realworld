@@ -1,14 +1,16 @@
-// app 
+// app - once
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
+// app
+import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 // shared
 import { SharedModule } from './shared/shared.module'
 import { MaterialModule } from './shared/material.module'
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 // feature
 import { AppComponent } from './app.component';

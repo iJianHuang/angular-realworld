@@ -1,7 +1,7 @@
 // app
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+//import { HttpClientModule } from '@angular/common/http';
 
 // shared
 import { MaterialModule } from '../shared/material.module';
@@ -20,7 +20,7 @@ const routes: Routes = [
   declarations: [ConduitAppComponent],
   imports: [
     //CommonModule,
-    HttpClientModule,
+    //HttpClientModule,
     MaterialModule,
     FlexLayoutModule,
     SharedModule,

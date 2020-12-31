@@ -1,7 +1,7 @@
 // app
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+// import { HttpClientModule } from '@angular/common/http';
 
 // shared
 import { MaterialModule } from '../shared/material.module';
@@ -43,7 +43,7 @@ const routes: Routes = [
   ],
   imports: [
     SharedModule,
-    HttpClientModule,
+    //HttpClientModule,
     MaterialModule,
     FlexLayoutModule,
     ReactiveFormsModule,
