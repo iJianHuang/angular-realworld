@@ -10,7 +10,7 @@ import { NewContactDialogComponent } from '../new-contact-dialog/new-contact-dia
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
-  @Output() toggleSidenav: EventEmitter<void> = new EventEmitter<void>();
+  @Output() toggleSidenavClicked: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(
     private dialog: MatDialog,
@@ -19,6 +19,10 @@ export class ToolbarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+  }
+
+  onToggleSidenavClick(): void {
+    this.toggleSidenavClicked.emit();
   }
 
   openAddContactDialog(): void {

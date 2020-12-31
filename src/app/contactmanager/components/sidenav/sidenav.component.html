@@ -15,7 +15,7 @@
     </mat-nav-list> 
   </mat-sidenav>
   <mat-sidenav-content class="app-sidenav-content">
-    <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
+    <app-toolbar (toggleSidenavClicked)="sidenav.toggle()"></app-toolbar>
     <div class="wrapper">
       <router-outlet></router-outlet>
     </div>    

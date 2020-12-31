@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Contactuser } from 'src/app/core/models/Contactuser';
-import { ContactuserService } from 'src/app/core/services/contactuser.service';
+import { Contactuser } from 'src/app/contactmanager/core/models/contactuser';
+import { ContactuserService } from '../../core/services/contactuser.service';
 
 @Component({
   selector: 'app-main-content',

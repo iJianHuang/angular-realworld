@@ -3,8 +3,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Contactuser } from 'src/app/core/models/Contactuser';
-import { ContactuserService } from 'src/app/core/services/contactuser.service';
+import { Contactuser } from 'src/app/contactmanager/core/models/contactuser';
+import { ContactuserService } from 'src/app/contactmanager/core/services/contactuser.service';
 
 const  SMALL_WIDTH_BREAKPOINT = 720;
 

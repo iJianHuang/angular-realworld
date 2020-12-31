@@ -14,6 +14,7 @@ import { HeaderComponent } from './shared/layout/header.component';
 //import { HomeComponent } from './home/home.component';
 import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
+import { SharedModule } from './shared/shared.module'
 
 
 
@@ -34,6 +35,7 @@ import { AuthModule } from './auth/auth.module';
     FlexLayoutModule,
     FormsModule,
     HomeModule,
+    SharedModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],

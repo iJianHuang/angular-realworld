@@ -7,7 +7,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms'
 
 import { HomeComponent } from './home.component';
-import { SharedModule } from '../shared'; 
+import { SharedModule } from '../shared/shared.module'; 
 
 
 const routes: Routes = [{

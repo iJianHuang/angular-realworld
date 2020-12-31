@@ -6,11 +6,15 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Output() toggleTheme = new EventEmitter<void>();
+  @Output() toggleThemeClicked = new EventEmitter<void>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onToggleThemeClick(): void {
+    this.toggleThemeClicked.emit();
   }
 
 }

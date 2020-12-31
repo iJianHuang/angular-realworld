@@ -2,7 +2,7 @@ import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/cor
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Contactnote } from 'src/app/core/models/contactnote';
+import { Contactnote } from '../../core/models/contactnote';
 
 @Component({
   selector: 'app-contactnotes',

@@ -2,51 +2,57 @@
 
   <mat-toolbar color="primary" class="app-home-slide mat-elevation-z10">
     <h1 class="app-home-slide-title">
-      <div>Jian's</div> 
-      <div>Code Camp</div>      
+      <div>
+        Jian's<br>
+        &nbsp;<br>
+        Code Camp
+      </div>
     </h1>
   </mat-toolbar>
   <div class="app-home-cards" fxLayoutAlign="space-around center">
     <mat-card class="example-card">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
+        <div mat-card-avatar>
+          <mat-icon color="primary">contacts</mat-icon>
+        </div>
         <mat-card-title>Contacts</mat-card-title>
-        <mat-card-subtitle>...</mat-card-subtitle>
+        <mat-card-subtitle>Contacts Manager Application</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <mat-nav-list>
-          <mat-list-item>
-            <a matLine [routerLink]="['/contactmanager']">
-              <mat-icon>face</mat-icon> Contacts Manager Application
-            </a>
-          </mat-list-item>
-        </mat-nav-list>
+        <p>
+          This is a DIY exercise on Angular Material. 
+          The reference is Towfeek's Styling with Angular Material
+        </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
+        <a mat-button [routerLink]="['/contactmanager']">
+          VIEW
+        </a>
       </mat-card-actions>
     </mat-card>
     <mat-card class="example-card">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
+        <div mat-card-avatar>
+          <mat-icon color="primary">thumb_up</mat-icon>
+        </div>
         <mat-card-title>Conduit</mat-card-title>
-        <mat-card-subtitle>...</mat-card-subtitle>
+        <mat-card-subtitle>Real world angular app</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <mat-nav-list>
-          <mat-list-item>
-            <a matLine [routerLink]="['/conduit']">
-              <mat-icon>thumb_up</mat-icon> Conduit Application
-            </a>
-          </mat-list-item>
-        </mat-nav-list>
+        <p>
+          This is a DIY exercise to build an application with
+          <a mat-line href="https://conduit.productionready.io/api" target="_blank">live APIs</a>
+          hosted by
+          <a mat-line href="https://github.com/gothinkster/angular-realworld-example-app"
+            target="_blank">GoThinkster</a>
+        </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
+        <a mat-button [routerLink]="['/conduit']">
+          VIEW
+        </a>
       </mat-card-actions>
     </mat-card>
   </div>
- 
+
 </div>
