@@ -2,15 +2,16 @@
   <span><a mat-button routerLink="home" class="site-name">Jian's Code Camp</a></span>
 
   <span class="toolbar-spacer"></span>
-  <div class="example-button-row">    
-    <a mat-button routerLink="contactmanager">Contacts</a>
-    <a mat-button routerLink="conduit">Conduit</a>
+  <div>    
+    
     <!-- <a mat-button routerLink="login">Sign in</a>
     <a mat-button routerLink="register">Sign up</a> -->
     <button mat-button [matMenuTriggerFor]="menu">
-      <mat-icon>more_vert</mat-icon>
+      <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
+      <a mat-button routerLink="contactmanager">Contacts</a><br>
+      <a mat-button routerLink="conduit">Conduit</a>
       <button mat-menu-item (click)="toggleTheme.emit()">Toggle Theme</button>
     </mat-menu>
   </div>
