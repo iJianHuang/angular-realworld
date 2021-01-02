@@ -2,10 +2,13 @@
   <span><a mat-button routerLink="home" class="site-name">Jian's Code Camp</a></span>
 
   <span class="toolbar-spacer"></span>
-  <div>    
-    
-    <!-- <a mat-button routerLink="login">Sign in</a>
-    <a mat-button routerLink="register">Sign up</a> -->
+
+  <div *ngIf="!isScreenSmall">    
+      <a mat-button routerLink="contactmanager">Contacts</a>
+      <a mat-button routerLink="conduit">Conduit</a>
+      <button mat-button (click)="onToggleThemeClick()">Toggle Theme</button>    
+  </div>
+  <div *ngIf="isScreenSmall"> 
     <button mat-button [matMenuTriggerFor]="menu">
       <mat-icon>menu</mat-icon>
     </button>
@@ -15,24 +18,5 @@
       <button mat-menu-item (click)="onToggleThemeClick()">Toggle Theme</button>
     </mat-menu>
   </div>
-
-  
-
-  <!-- <button mat-button>
-    <mat-icon>menu</mat-icon>
-  </button>
-
-  <button mat-button (click)="toggleSidenav.emit()" class="sidenav-toggle">
-      <mat-icon>menu</mat-icon>
-  </button>
-
-  <button mat-button [matMenuTriggerFor]="menu">
-    <mat-icon>more_vert</mat-icon>
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item >Contact</button>
-    <button mat-menu-item >Sign in / login</button>
-    <button mat-menu-item >Sign up / register</button>
-  </mat-menu> -->
 </mat-toolbar>
 

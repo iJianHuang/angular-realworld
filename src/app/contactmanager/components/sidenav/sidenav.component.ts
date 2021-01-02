@@ -1,12 +1,12 @@
-import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+
 import { Contactuser } from 'src/app/contactmanager/core/models/contactuser';
 import { ContactuserService } from 'src/app/contactmanager/core/services/contactuser.service';
+import { StateBagService } from 'src/app/core/services/state-bag.service';
 
-const  SMALL_WIDTH_BREAKPOINT = 720;
 
 @Component({
   selector: 'app-sidenav',
@@ -18,19 +18,17 @@ export class SidenavComponent implements OnInit {
   users: Observable<Contactuser[]>;
 
   constructor(
-    private breakpointObserver: BreakpointObserver,
     private userService: ContactuserService,
-    private router: Router
+    private router: Router,
+    private stateBagService: StateBagService
   ) { }
 
   @ViewChild(MatSidenav) sidenav: MatSidenav;
 
   ngOnInit(): void {
-    this.breakpointObserver
-    .observe([ `(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`])
-    .subscribe((state: BreakpointState) => {
-      this.isScreenSmall = state.matches;
-    });
+    this.stateBagService
+    .isScreenSmall$
+    .subscribe(isScreenSmallState => this.isScreenSmall = isScreenSmallState);
 
     this.users = this.userService.users;
     this.userService.loadAll();
