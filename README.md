@@ -63,3 +63,14 @@ References:
 https://stackblitz.com/angular/anovqaeopyy?file=src%2Fstyles.css
 
 https://stackblitz.com/angular/qypdxgpopxp?file=src%2Findex.html
+
+## Deploy By Script
+# Step 1. Build
+ng build --prod
+
+# step 2 Deploy
+# syntax: aws s3 sync <source> <target> [--options]
+# s3 sync command makes sure the target looks the same as the source in the end. 
+# In addition, you can also supply the --delete option 
+#   to remove files or objects from the target that are not present in the source.
+aws s3 sync dist/angular-realworld/. s3://www.ijianhuang.com --delete

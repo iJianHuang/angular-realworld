@@ -23,9 +23,21 @@ export class ApiService {
     return new HttpHeaders(headersConfig);
   }
 
- 
+  getConduit(path: string): Observable<any> { 
+    const headers = this.setHeaders();
+    return this.http.get(
+        `${environment.api_url_conduit}${path}`, 
+        { headers }
+      )
+      .pipe(
+        tap(data => console.log('Result: ' + JSON.stringify(data))),
+        catchError(this.handleError) 
+      );
+      // .catch(this.formatErrors)
+      // .map((res:Response) => res.json());
+  }
 
-  post(path: string, body: Object = {}): Observable<any> { 
+  postConduit(path: string, body: Object = {}): Observable<any> { 
     const headers = this.setHeaders();
     return this.http.post(
         `${environment.api_url_conduit}${path}`, 

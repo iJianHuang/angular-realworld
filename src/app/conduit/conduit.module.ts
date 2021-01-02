@@ -10,6 +10,8 @@ import { SharedModule } from '../shared/shared.module'
 
 // feature
 import { ConduitAppComponent } from './conduit-app.component';
+import { GlobalFeedComponent } from './components/global-feed/global-feed.component';
+import { YourFeedComponent } from './components/your-feed/your-feed.component';
 
 const routes: Routes = [
   { path: '', component: ConduitAppComponent },
@@ -17,7 +19,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ConduitAppComponent],
+  declarations: [ConduitAppComponent, GlobalFeedComponent, YourFeedComponent],
   imports: [
     //CommonModule,
     //HttpClientModule,
