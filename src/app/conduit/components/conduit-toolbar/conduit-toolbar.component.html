@@ -1,0 +1,11 @@
+<mat-toolbar color="basic">   
+    <span>Conduit</span>
+    <span class="spacer"></span>
+  
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>menu 1</button>
+    </mat-menu>
+  </mat-toolbar>

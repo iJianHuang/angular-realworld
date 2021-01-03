@@ -12,6 +12,7 @@ import { SharedModule } from '../shared/shared.module'
 import { ConduitAppComponent } from './conduit-app.component';
 import { GlobalFeedComponent } from './components/global-feed/global-feed.component';
 import { YourFeedComponent } from './components/your-feed/your-feed.component';
+import { ConduitToolbarComponent } from './components/conduit-toolbar/conduit-toolbar.component';
 
 const routes: Routes = [
   { path: '', component: ConduitAppComponent },
@@ -19,7 +20,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ConduitAppComponent, GlobalFeedComponent, YourFeedComponent],
+  declarations: [ConduitAppComponent, GlobalFeedComponent, YourFeedComponent, ConduitToolbarComponent],
   imports: [
     //CommonModule,
     //HttpClientModule,

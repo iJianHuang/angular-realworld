@@ -5,12 +5,13 @@
     <mat-card-subtitle>{{article.createdAt | date: 'yyyy-MM-dd'}}</mat-card-subtitle>
     <span class="spacer"></span>
     <div>
-        <button mat-raised-button *ngIf="article.favoritesCount==0">
-            <mat-icon color="primary">favorite</mat-icon>
-        </button>
-        <button mat-raised-button *ngIf="article.favoritesCount!=0" matBadge="{{article.favoritesCount}}" matBadgeColor="primary">
-            <mat-icon color="primary">favorite</mat-icon>
-        </button>
+      <button mat-raised-button *ngIf="article.favoritesCount==0">
+        <mat-icon color="primary">favorite</mat-icon>
+      </button>
+      <button mat-raised-button *ngIf="article.favoritesCount!=0" matBadge="{{article.favoritesCount}}"
+        matBadgeColor="primary">
+        <mat-icon color="primary">favorite</mat-icon>
+      </button>
     </div>
   </mat-card-header>
 
