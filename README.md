@@ -44,6 +44,10 @@ Content-Length: 113
   }
 }
 
+GET /api/user HTTP/1.1
+Authorization: Token ???
+Host: conduit.productionready.io
+
 Response Ok 200
 {
     "user": {

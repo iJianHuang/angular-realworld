@@ -1,4 +1,4 @@
-export class User {
+export class ConduitUser {
     email: string;
     token: string;
     username: string;

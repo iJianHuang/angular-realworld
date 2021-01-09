@@ -25,6 +25,7 @@ export class ApiService {
 
   getConduit(path: string): Observable<any> { 
     const headers = this.setHeaders();
+
     return this.http.get(
         `${environment.api_url_conduit}${path}`, 
         { headers }

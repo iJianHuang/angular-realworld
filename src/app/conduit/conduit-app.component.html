@@ -3,40 +3,8 @@
 
   <mat-drawer-container>    
     <mat-drawer-content>
-      <mat-tab-group>  
-        <mat-tab>
-          <ng-template mat-tab-label>
-            <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-            Global Feed
-          </ng-template>
-          <app-global-feed></app-global-feed>
-        </mat-tab>
-    
-        <mat-tab>
-          <ng-template mat-tab-label>
-            <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-            Your Feed
-          </ng-template>
-          <p>
-            The content of your feeds
-          </p>
-        </mat-tab>
-        <mat-tab>
-          <ng-template mat-tab-label>
-            <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-            Popular Tags
-          </ng-template>
-          <p>
-            The content of popular tags
-          </p>
-        </mat-tab>
-      </mat-tab-group>
+      <router-outlet></router-outlet>
     </mat-drawer-content>
   </mat-drawer-container>
-  <div>
-    
-  </div>
- 
-
-
+  
 </div>

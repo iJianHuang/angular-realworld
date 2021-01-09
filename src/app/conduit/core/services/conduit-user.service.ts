@@ -6,33 +6,47 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of, BehaviorSubject, throwError } from 'rxjs';
 import { catchError, tap, map, distinctUntilChanged } from 'rxjs/operators';
 
-import { ApiService } from './api.service';
-import { User } from '../models/user.model';
+import { ApiService } from '../../../core/services/api.service';
+import { JwtService } from '../../../core/services/jwt.service'
+
+import { ConduitUser } from '../models/conduit-user.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
-  private currentUserSubject = new BehaviorSubject<User>(new User());
-  public currentUser = this.currentUserSubject.asObservable(); //.distinctUntilChanged();
+export class ConduitUserService {
+  private currentUserSubject = new BehaviorSubject<ConduitUser>(new ConduitUser());
+  public currentUser$ = this.currentUserSubject.asObservable().pipe(distinctUntilChanged());
 
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
-  public isAuthenticated = this.isAuthenticatedSubject.asObservable();
+  public isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
   
 
   constructor(
     private apiService: ApiService,
-    private http: HttpClient
+    private http: HttpClient,
+    private jwtService: JwtService
   ) { }
 
-  setAuth(user: User) {
-    // Set current user data into observable
+  populate() {
+    if (this.jwtService.getConduitToken()) {
+      this.apiService.getConduit('/user')
+      .subscribe(
+        data => this.setAuth(data.user),
+        err => this.purgeAuth()
+      );
+    } else {
+      this.purgeAuth();
+    }
+  }
+
+  setAuth(user: ConduitUser) {
+    this.jwtService.saveConduitToken(user.token);
     this.currentUserSubject.next(user);
-    // Set isAuthenticated to true
     this.isAuthenticatedSubject.next(true);
   }
 
-  attemptAuth(type, credentials): Observable<User> {
+  attemptAuth(type, credentials): Observable<ConduitUser> {
     let route = (type === 'login') ? '/login' : '';
     return this.apiService
       .postConduit('/users' + route, {user: credentials})
@@ -40,16 +54,16 @@ export class UserService {
         tap(data => console.log('Result: ' + JSON.stringify(data))),
         tap(data => this.setAuth(data.user)),
         catchError(this.handleError) 
-      );
-    // .map(
-    //   data => {
-    //     this.setAuth(data.user);
-    //     return data;
-    //   }
-    // );
+      );    
   }
 
-  getCurrentUser(): User {
+  purgeAuth() {
+    this.jwtService.destroyConduitToken();
+    this.currentUserSubject.next({} as ConduitUser);
+    this.isAuthenticatedSubject.next(false);
+  }
+
+  getCurrentUser(): ConduitUser {
     return this.currentUserSubject.value;
   }
 

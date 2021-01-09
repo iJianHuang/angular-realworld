@@ -17,7 +17,8 @@ export class NewContactDialogComponent implements OnInit {
 
   constructor(
     private dialogRef: MatDialogRef<NewContactDialogComponent>,
-    private userService: ContactuserService) { }
+    private userService: ContactuserService
+  ) { }
 
   ngOnInit(): void {
     this.user = new Contactuser();

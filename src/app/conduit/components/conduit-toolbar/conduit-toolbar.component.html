@@ -1,11 +1,28 @@
 <mat-toolbar color="basic">   
     <span>Conduit</span>
     <span class="spacer"></span>
-  
-    <button mat-button [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>menu 1</button>
-    </mat-menu>
+   
+
+    <div *ngIf="!isScreenSmall">          
+        <button *ngIf="!isAuthenticated" mat-button >Wecome, guest!</button>
+        <button *ngIf="isAuthenticated" mat-button >{{currentUser?.username}}</button>
+        <button *ngIf="!isAuthenticated" mat-button (click)="openAuthDialog()">Sign in</button>
+        <button *ngIf="isAuthenticated" mat-button (click)="signOut()">Sign out</button>
+        <!-- <a mat-button routerLink="/conduit/login">Login</a>
+        <a mat-button routerLink="/conduit/register">Register</a>   -->
+    </div>
+    <div *ngIf="isScreenSmall"> 
+      <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button *ngIf="!isAuthenticated" mat-button >Wecome, guest!</button>
+        <button *ngIf="isAuthenticated" mat-button >{{currentUser?.username}}</button>
+        <br>
+        <button *ngIf="!isAuthenticated" mat-button (click)="openAuthDialog()">Sign in</button>
+        <button *ngIf="isAuthenticated" mat-button >Sign out</button>
+        <!-- <a mat-button routerLink="/login">Login</a><br>
+        <a mat-button routerLink="/register">Register</a>  -->
+      </mat-menu>
+    </div>
   </mat-toolbar>
