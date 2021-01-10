@@ -13,6 +13,7 @@ export class GlobalFeedService {
     private http: HttpClient
   ) { }
 
+  // https://conduit.productionready.io/api/articles?limit=10&offset=0
   getArticles(): Observable<any> {
     return this.apiService.getConduit('/articles');
   }
