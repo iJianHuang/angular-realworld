@@ -20,7 +20,7 @@
         <button *ngIf="isAuthenticated" mat-button >{{currentUser?.username}}</button>
         <br> -->
       <button *ngIf="!isAuthenticated" mat-button (click)="openAuthDialog()">Sign in</button>
-      <button *ngIf="isAuthenticated" mat-button>Sign out</button>
+      <button *ngIf="isAuthenticated" mat-button  (click)="signOut()">Sign out</button>
       <!-- <a mat-button routerLink="/login">Login</a><br>
         <a mat-button routerLink="/register">Register</a>  -->
     </mat-menu>
