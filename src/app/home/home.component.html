@@ -1,5 +1,4 @@
 <div class="main-content-container">
-
   <mat-toolbar color="primary" class="app-home-slide mat-elevation-z10">
     <h1 class="app-home-slide-title">
       <div>
@@ -10,26 +9,6 @@
     </h1>
   </mat-toolbar>
   <div class="app-home-cards" fxLayoutAlign="space-around center">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar>
-          <mat-icon color="primary">contacts</mat-icon>
-        </div>
-        <mat-card-title>Contacts</mat-card-title>
-        <mat-card-subtitle>Contacts Manager Application</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>
-          This is a DIY exercise on Angular Material. 
-          The reference is Towfeek's Styling with Angular Material
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <a mat-button [routerLink]="['/contactmanager']">
-          VIEW
-        </a>
-      </mat-card-actions>
-    </mat-card>
     <mat-card class="example-card">
       <mat-card-header>
         <div mat-card-avatar>
@@ -53,6 +32,26 @@
         </a>
       </mat-card-actions>
     </mat-card>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar>
+          <mat-icon color="primary">contacts</mat-icon>
+        </div>
+        <mat-card-title>Contacts</mat-card-title>
+        <mat-card-subtitle>Contacts Manager Application</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          This is a DIY exercise on Angular Material. 
+          The reference is Towfeek's Styling with Angular Material
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-button [routerLink]="['/contactmanager']">
+          VIEW
+        </a>
+      </mat-card-actions>
+    </mat-card>
+   
   </div>
-
 </div>
